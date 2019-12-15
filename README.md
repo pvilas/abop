@@ -6,11 +6,14 @@ Estaba leyendo el fantástico libro,
 
 > Przemyslaw Prusinkiewicz y Aristid Lindenmayer. **The Algorithmic Beauty of Plants**. Electronic Edition 2004 Przemyslaw Prusinkiewicz.
 
-y viendo cómo se podía representar el crecimiento de sistemas biológicos mediante una cuantas reglas lógicas me pregunté cómo sería *oir* el crecimiento de dichos sistemas. Es decir, mapear las letras del L-system a sonidos para oir su crecimiento. El enfoque tradicional ha sido, como es normal, gráfico, ya que se han utilizado los L-systems para modelizar el crecimiento de las ramas de los vegetales.
+y viendo cómo se podía representar el crecimiento de sistemas biológicos mediante una cuantas reglas lógicas me pregunté cómo sería *oir* el crecimiento de dichos sistemas. Es decir, mapear las letras del L-system a sonidos para oir su crecimiento. El enfoque tradicional ha sido, como es normal, gráfico, ya que se han utilizado los L-systems para modelizar el crecimiento de las ramas de los vegetales. 
+
+Como era de esperar, muchos han *sonificado* estos sistemas de formas muy originales para crar arte.
 
 Vaya por delante que no tengo ni idea de música y que estas son mis pruebas preliminares. Cuando tenga tiempo, me leeré el artículo que acompaña a la librería [music](https://pypi.org/project/music/) que parece muy interesante y que explica cómo generar notas. De momento, las *notas* son senoides a frecuencias determinadas.
 
-En cuanto a la implementación (hecha en un par de horas) tampoco es que me haya matado para sacar los algoritmos más eficientes. De hecho el crecimiento de guarda en un string que se va ampliando. He primado la claridad a la eficiencia.
+En cuanto a la implementación (hecha en un par de horas) tampoco es que me haya matado para sacar los algoritmos más eficientes. De hecho, el crecimiento se guarda en un simple string que se va ampliando. He primado la claridad a la eficiencia.
+
 
 ## DOL-system
 
@@ -26,7 +29,7 @@ Se parte de un axioma, p.e. $b$ y, en cada derivación o generación, se va rees
 
 $$b \to a \to ab  \to aba  \to abaab  \to abababa$$
 
-Por ejemplo, el desarrollo filamentoso de la cianobacteria [Anabaena catenula](https://es.wikipedia.org/wiki/Anabaena) se rige por un conjunto de reglas. $l$ y $r$ se refieren la polaridad, es decir las posiciones en donde las células hijas de tipo $a$ o $b$ serán producidas. El desarrollo del organismo está descrito por el siguiente L-system:
+Por ejemplo, el desarrollo filamentoso de la cianobacteria [Anabaena catenula](https://es.wikipedia.org/wiki/Anabaena) se rige por un conjunto de cuatro reglas. $l$ y $r$ se refieren la polaridad, es decir las posiciones en donde las células hijas de tipo $a$ o $b$ serán producidas. El desarrollo del organismo está descrito por el siguiente L-system:
 
 $$ \begin{matrix}
 \omega: a_r \\
@@ -43,6 +46,8 @@ $$a_r \to a_l b_r \to b_l a_r a_r \to ...$$
 Si mapeamos $\{a_r, a_l, b_r, b_l\}$ a $\{a, b, c, d\}$, la evolución sería:
 
 $$a/da/bbc/dadaa/bbcbbcbc/dadaadadaadaa/bbcbbcbcbbcbbcbcbbcbc/...$$
+
+Ver el vídeo de la sonificación de [Raven Kwok](http://ravenkwok.com/1b5f1/) de este tema.
 
 ## Implementación
 
@@ -123,3 +128,7 @@ ACC_RAMP = 1.05
 ```
 
 Lo divertido es ir modificando todos estos parámetros, sobre todo las reglas, y *oir* cómo evoluciona el *organismo*.
+
+## Bibliografía
+
+Wikipedia ([es](https://es.wikipedia.org/wiki/Sistema-L), [en](https://en.wikipedia.org/wiki/L-system)) tiene un montón de información sobre el tema y fantásticos links.
