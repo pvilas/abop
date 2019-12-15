@@ -8,8 +8,6 @@ Estaba leyendo el fantástico libro,
 
 y viendo cómo se podía representar el crecimiento de sistemas biológicos mediante una cuantas reglas lógicas me pregunté cómo sería *oir* el crecimiento de dichos sistemas. Es decir, mapear las letras del L-system a sonidos para oir su crecimiento. El enfoque tradicional ha sido, como es normal, gráfico, ya que se han utilizado los L-systems para modelizar el crecimiento de las ramas de los vegetales. 
 
-Como era de esperar, muchos han *sonificado* estos sistemas de formas muy originales para crar arte.
-
 Vaya por delante que no tengo ni idea de música y que estas son mis pruebas preliminares. Cuando tenga tiempo, me leeré el artículo que acompaña a la librería [music](https://pypi.org/project/music/) que parece muy interesante y que explica cómo generar notas. De momento, las *notas* son senoides a frecuencias determinadas.
 
 En cuanto a la implementación (hecha en un par de horas) tampoco es que me haya matado para sacar los algoritmos más eficientes. De hecho, el crecimiento se guarda en un simple string que se va ampliando. He primado la claridad a la eficiencia.
